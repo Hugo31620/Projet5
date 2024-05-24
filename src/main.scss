@@ -1,0 +1,17 @@
+@use "./sass/app.scss";
+@use "./sass/header.scss";
+@use "./sass/banniere.scss";
+@use "./sass/cards.scss";
+@use "./sass/acceuil.scss";
+@use "./sass/footer.scss";
+@use "./sass/banniereP.scss";
+@use "./sass/data.scss";
+@use "./sass/collapse.scss";
+@use "./sass/erreur.scss";
+@use "./sass/carrousel.scss";
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 100px;
+    margin-right: 100px;
+}
