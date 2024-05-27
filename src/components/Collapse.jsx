@@ -1,55 +1,56 @@
 import React, { useState } from 'react';
+import arrowOpen from '../assets/images/arrow_open.png';
+import arrowClose from '../assets/images/arrow_close.png';
+
+const sections = [
+  {
+    title: "Fiabilité",
+    content: "Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.",
+  },
+  {
+    title: "Respect",
+    content: "La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.",
+  },
+  {
+    title: "Service",
+    content: "Nos équipes se tiennent à votre disposition pour vous fournir une expérience parfaite. N'hésitez pas à nous contacter si vous avez la moindre question.",
+  },
+  {
+    title: "Sécurité",
+    content: "La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.",
+  }
+];
 
 const Collapse = () => {
-    const [isFiabiliteOpen, setFiabiliteOpen] = useState(false);
-    const [isRespectOpen, setRespectOpen] = useState(false);
-    const [isServiceOpen, setServiceOpen] = useState(false);
-    const [isSecuriteOpen, setSecuriteOpen] = useState(false);
+  const [activeIndices, setActiveIndices] = useState([]);
 
-    const toggleFiabilite = () => {
-        setFiabiliteOpen(!isFiabiliteOpen);
-    };
-
-    const toggleRespect = () => {
-        setRespectOpen(!isRespectOpen);
-    };
-
-    const toggleService = () => {
-        setServiceOpen(!isServiceOpen);
-    };
-
-    const toggleSecurite = () => {
-        setSecuriteOpen(!isSecuriteOpen);
-    };
-
-    return (
-        <div className="collapse">
-            <div className="fiabilite">
-                <p onClick={toggleFiabilite}>Fiabilité <span className={isFiabiliteOpen ? "arrow open" : "arrow"}></span></p>
-                {isFiabiliteOpen && (
-                    <span>Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.</span>
-                )}
-            </div>
-            <div className="respect">
-                <p onClick={toggleRespect}>Respect <span className={isRespectOpen ? "arrow open" : "arrow"}></span></p>
-                {isRespectOpen && (
-                    <span>La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.</span>
-                )}
-            </div>
-            <div className="service">
-                <p onClick={toggleService}>Service <span className={isServiceOpen ? "arrow open" : "arrow"}></span></p>
-                {isServiceOpen && (
-                    <span>Nos équipes se tiennent à votre disposition pour vous fournir une expérience parfaite. N'hésitez pas à nous contacter si vous avez la moindre question.</span>
-                )}
-            </div>
-            <div className="securite">
-                <p onClick={toggleSecurite}>Sécurité <span className={isSecuriteOpen ? "arrow open" : "arrow"}></span></p>
-                {isSecuriteOpen && (
-                    <span>La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.</span>
-                )}
-            </div>
-        </div> 
+  const handleToggle = (index) => {
+    setActiveIndices(prevIndices => 
+      prevIndices.includes(index)
+        ? prevIndices.filter(i => i !== index)
+        : [...prevIndices, index]
     );
-}
+  };
+
+  return (
+    <div className='collapse'>
+      {sections.map((section, index) => (
+        <div className='collapse_ind' key={index}>
+          <div className='collapse_ind_txt' onClick={() => handleToggle(index)} style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
+            <h3>{section.title}</h3>
+            <img
+              src={activeIndices.includes(index) ? arrowClose : arrowOpen}
+              alt="Toggle arrow"
+              style={{ marginLeft: '10px' }}
+            />
+          </div>
+          {activeIndices.includes(index) && (
+            <p>{section.content}</p>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export default Collapse;

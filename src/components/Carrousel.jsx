@@ -7,7 +7,7 @@ import arrowLeft from "../assets/images/arrowLeft.png";
 import arrowRight from "../assets/images/arrowRight.png";
 
 const Slideshow = ({ pictures }) => {
-  // Custom arrow components for the slider
+  
   const NextArrow = ({ onClick }) => (
     <div className="arrow next" onClick={onClick}>
       <img src={arrowRight} alt="Next" />
@@ -22,7 +22,7 @@ const Slideshow = ({ pictures }) => {
 
   const showArrows = pictures.length > 1;
 
-  // Slider settings with conditional arrows
+  
   const settings = {
     dots: showArrows,
     infinite: showArrows,

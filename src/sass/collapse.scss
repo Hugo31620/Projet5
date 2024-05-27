@@ -1,19 +1,22 @@
 .collapse {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 50px;
-    p{
-        background-color: #FF6060;
-        padding: 8px;
-        border-radius: 5px;
-        color: white;
-        cursor: pointer;
+    width: 90%;
+    margin: 0 auto;
+    .collapse_ind {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 30px;
+        .collapse_ind_txt {
+            background-color: #FF6060;
+            color: white;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            width: 100%;
+        }
     }
-    .fiabilite, .respect, .service, .securite {
-        width: 75%;
-    }
-
 }
