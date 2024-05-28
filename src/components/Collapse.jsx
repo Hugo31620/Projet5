@@ -36,12 +36,12 @@ const Collapse = () => {
     <div className='collapse'>
       {sections.map((section, index) => (
         <div className='collapse_ind' key={index}>
-          <div className='collapse_ind_txt' onClick={() => handleToggle(index)} style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
+          <div className='collapse_ind_txt' >
             <h3>{section.title}</h3>
             <img
               src={activeIndices.includes(index) ? arrowClose : arrowOpen}
               alt="Toggle arrow"
-              style={{ marginLeft: '10px' }}
+              onClick={() => handleToggle(index)}
             />
           </div>
           {activeIndices.includes(index) && (

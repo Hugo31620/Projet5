@@ -1,0 +1,24 @@
+.dropdown {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 40px 0;
+    .dropdown_description, .dropdown_equipments {
+        width: 45%;
+        .dropdown_top {
+            width: 96%;
+            display: flex;
+            justify-content: space-between;
+            background-color: #FF6060;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+            border-radius: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            img {
+                object-fit: contain;
+                cursor: pointer;
+            }
+        }
+    }
+}
