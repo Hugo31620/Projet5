@@ -22,10 +22,9 @@ const Rating = ({ item }) => {
 
     return (
         <div className="div2">
-            <div className="tags">
-                {item.tags.map((tag, index) => (
-                    <span key={index} className="tag">{tag}</span>
-                ))}
+            <div className="host">
+                <p className="name">{item.host.name}</p>
+                <img src={item.host.picture} alt={item.host.name} />
             </div>
             <div className="rating">
                 {stars}
