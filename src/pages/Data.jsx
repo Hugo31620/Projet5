@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from "react-router-dom";
 import data from "../data/data.json";
-import Slideshow from "../components/Carrousel";
+import Slideshow from "../components/Caroussel";
 import Erreur from "../pages/Erreur";
 import RatingHost from "../components/RatingHost";
 import Dropdown from '../components/Dropdown';

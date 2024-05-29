@@ -5,21 +5,21 @@
   .arrow {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-100%);
     z-index: 2;
     cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.05);
   }
   
   .arrow.next {
-    right: 10px;
-    color: red;
+    right: 130px;
   }
   
   .arrow.prev {
-    left: 10px;
+    left: 130px;
   }
   
-  .slick-slide img {
+  .slider-content img {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,11 +28,21 @@
     height: 500px;
     border-radius: 10px;
   }
+  .slide-indicator {
+    display: flex;
+    justify-content: center;
+  }
   @media (max-width: 780px) {
     .arrow.next, .arrow.prev {
       img {
         height: 50px;
       }
+    }
+    .arrow.next {
+      right: 30px;
+    }
+    .arrow.prev {
+      left: 30px;
     }
   }
   

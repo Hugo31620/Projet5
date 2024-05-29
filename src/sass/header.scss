@@ -24,7 +24,10 @@
     @media (max-width: 780px) {
         margin: 0;
         img {
-            height: 50px;
+            height: 45px;
+        }
+        a {
+            text-transform: uppercase;
         }
     }
 }
