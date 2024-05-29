@@ -8,7 +8,7 @@ const Erreur = () => {
             </div>
             <div className="erreur">
                 <h3>
-                    Oups! La page que<span className="responsive-text"> vous demandez n'existe pas.</span>
+                    Oups! La page que vous demandez n'existe pas.
                 </h3>
             </div>
             <div className="retour">

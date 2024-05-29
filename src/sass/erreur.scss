@@ -41,10 +41,6 @@
             max-width: 90%;
             margin: 0 auto;
             h2 {
-                .responsive-text::before {
-                    content: "\A";
-                    white-space: pre;
-                  }
                 font-size: 125px;
             }
             h3 {
