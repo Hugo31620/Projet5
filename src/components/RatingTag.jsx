@@ -5,14 +5,15 @@ import rating_inactive from "../assets/images/star-inactive.png";
 
 const Rating = ({ item }) => {
     if (!item) {
-        return null; // Ou affichez un message d'erreur, une valeur par défaut, etc.
+        return null;
     }
 
     const maxRating = 5;
+    const rating = Number(item.rating);
     const stars = [];
 
     for (let i = 0; i < maxRating; i++) {
-        if (i < item.rating) {
+        if (i < rating) {
             stars.push(<img key={i} src={rating_active} alt="active star" className="star" />);
         } else {
             stars.push(<img key={i} src={rating_inactive} alt="inactive star" className="star" />);

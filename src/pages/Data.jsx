@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import data from "../data/data.json";
 import Slideshow from "../components/Carrousel";
 import Erreur from "../pages/Erreur";
-import Rating from "../components/Rating";
+import RatingTag from "../components/RatingTag";
 import Dropdown from '../components/Dropdown';
 
 const logementId = (id) => {
@@ -18,11 +18,6 @@ const Data = () => {
         return <Erreur />;
     }
 
-    const someItem = {
-        rating: 4,
-        tags: ["tag1", "tag2"]
-    };
-
     return (
         <div className="logement">
             <Slideshow pictures={item.pictures} />
@@ -34,7 +29,7 @@ const Data = () => {
                 </div>
              </div>
             <h3 className="location">{item.location}</h3>
-            <Rating item={someItem} />
+            <RatingTag item={item} />
             <Dropdown item={item} />
         </div>
     );

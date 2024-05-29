@@ -14,4 +14,14 @@
     h3 {
         color: white;
     }
+    @media (max-width: 780px) {
+        
+        img {
+            height: 50px;
+            width: auto;
+        }
+        h3 {
+            font-weight: 400;
+        }
+    }
 }

@@ -5,7 +5,7 @@
     .dropdown_description, .dropdown_equipments {
         width: 45%;
         .dropdown_top {
-            width: 96%;
+            width: 95%;
             display: flex;
             justify-content: space-between;
             background-color: #FF6060;
@@ -20,5 +20,8 @@
                 cursor: pointer;
             }
         }
+    }
+    ul {
+        list-style-type: none;
     }
 }

@@ -7,7 +7,9 @@ const Erreur = () => {
                 <h2>404</h2>
             </div>
             <div className="erreur">
-                <h3>Oups! La page que vous demandez n'existe pas.</h3>
+                <h3>
+                    Oups! La page que<span className="responsive-text"> vous demandez n'existe pas.</span>
+                </h3>
             </div>
             <div className="retour">
                 <NavLink to ="/">

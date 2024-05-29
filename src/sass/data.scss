@@ -1,5 +1,5 @@
 .logement {
-    overflow: auto;
+    overflow: hidden;
     margin-top: 50px;
     .pictures {
         img {
@@ -23,15 +23,18 @@
             gap: 10px;
             color: #FF6060;
             font-weight: 600;
+            font-size: 18px;
             img {
-                border-radius: 70px;
-                object-fit: cover;
+              width: 40%;
+              height: auto;
+              border-radius: 70px;
+              object-fit: cover;
             }
         }
     }
     h3{
         font-weight: 500;
-        margin-top: -50px;
+        margin-top: -45px;
         margin-bottom: 50px;
     }
     .div2 {
@@ -45,11 +48,55 @@
         color: white;
         font-weight: 600;
         font-size: 14px;
-        border-radius: 20px;
+        border-radius: 15px;
         padding: 5px 10px;
         margin-right: 5px;
         display: inline-block;
         text-align: center;
         line-height: 25px;
       }
+    @media (max-width: 780px) {
+        .pictures {
+          img {
+            height: 350px;
+          }
+        }
+        .div1 {
+          display: flex;
+          flex-direction: column;
+            h2 {
+              margin-bottom: 10px;
+            }
+            .host {
+              margin-top: 50px;
+              position: absolute;
+              left: 60%;
+              top: 83%;
+            }
+            img {
+              width: 18% !important;
+              height: auto !important;
+            }         
+        }
+
+        h3{
+          font-weight: 500;
+          margin-top: 0px;
+          margin-bottom: 15px;
+        }
+        .div2 {
+          display: flex;
+          gap: 15px;
+          flex-direction: column;
+        }
+        .dropdown {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          gap: 20px;
+          .dropdown_description, .dropdown_equipments {
+            width: 100%;
+          }
+      }
+    }
 }
