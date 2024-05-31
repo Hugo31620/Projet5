@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import arrowOpen from '../assets/images/arrow_open.png';
-import arrowClose from '../assets/images/arrow_close.png';
+import arrow from '../assets/images/arrow_open.png';
 
 const sections = [
   {
@@ -39,9 +38,10 @@ const Collapse = () => {
           <div className='collapse_ind_txt' >
             <h3>{section.title}</h3>
             <img
-              src={activeIndices.includes(index) ? arrowClose : arrowOpen}
+              src={arrow}
               alt="Toggle arrow"
               onClick={() => handleToggle(index)}
+              className={`fleche ${activeIndices.includes(index) ? 'rotate' : ''}`}
             />
           </div>
           {activeIndices.includes(index) && (

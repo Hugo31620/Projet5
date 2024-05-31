@@ -36,7 +36,6 @@ const Rating = ({ item }) => {
 Rating.propTypes = {
     item: PropTypes.shape({
         rating: PropTypes.number.isRequired,
-        tags: PropTypes.arrayOf(PropTypes.string).isRequired
     }).isRequired
 };
 

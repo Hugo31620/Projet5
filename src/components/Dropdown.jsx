@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import arrowOpen from '../assets/images/arrow_open.png';
-import arrowClose from '../assets/images/arrow_close.png';
+import arrow from '../assets/images/arrow_open.png';
 
 const Dropdown = ({ item }) => {
     const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
@@ -16,7 +15,7 @@ const Dropdown = ({ item }) => {
     };
 
     if (!item) {
-        return null; // Ou affichez un message d'erreur, une valeur par défaut, etc.
+        return null;
     }
 
     return (
@@ -25,38 +24,40 @@ const Dropdown = ({ item }) => {
                 <div className="dropdown_top" onClick={handleDescriptionToggle}>
                     <p>Description</p>
                     <img
-                        src={isDescriptionOpen ? arrowClose : arrowOpen}
+                        src={arrow}
                         alt="Toggle arrow"
+                        className={`fleche ${isDescriptionOpen ? 'rotate' : ''}`}
                     />
                 </div>
                 <div>
-                {isDescriptionOpen && (
-                    <div className="dropdown_bot">
-                        <p>{item.description}</p>
-                    </div>
-                )}
+                    {isDescriptionOpen && (
+                        <div className="dropdown_bot">
+                            <p>{item.description}</p>
+                        </div>
+                    )}
                 </div>
             </div>
             <div className='dropdown_equipments'>
                 <div className="dropdown_top" onClick={handleEquipmentsToggle}>
                     <p>Equipments</p>
                     <img
-                        src={isEquipmentsOpen ? arrowClose : arrowOpen}
+                        src={arrow}
                         alt="Toggle arrow"
+                        className={`fleche ${isEquipmentsOpen ? 'rotate' : ''}`}
                     />
                 </div>
                 <div>
-                {isEquipmentsOpen && (
-                    <div className="dropdown_bot">
-                        <div className="dropdown_equipments_liste">
-                            <ul>
-                                {item.equipments.map((equipment, index) => (
-                                    <li key={index}>{equipment}</li>
-                                ))}
-                            </ul>
+                    {isEquipmentsOpen && (
+                        <div className="dropdown_bot">
+                            <div className="dropdown_equipments_liste">
+                                <ul>
+                                    {item.equipments.map((equipment, index) => (
+                                        <li key={index}>{equipment}</li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                )}
+                    )}
                 </div>
             </div>
         </div>

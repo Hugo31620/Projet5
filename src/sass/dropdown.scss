@@ -2,10 +2,12 @@
     display: flex;
     justify-content: space-between;
     margin: 20px 0 40px 0;
-    .dropdown_description, .dropdown_equipments {
+    .dropdown_description,
+    .dropdown_equipments {
         width: 45%;
+        padding-right: 14px;
         .dropdown_top {
-            width: 95%;
+            width: 97%;
             display: flex;
             justify-content: space-between;
             background-color: #FF6060;
@@ -15,12 +17,23 @@
             border-radius: 5px;
             padding-left: 10px;
             padding-right: 10px;
-            img {
+
+            .fleche {
                 object-fit: contain;
                 cursor: pointer;
+                transition: transform 0.5s ease;
+            }
+            
+            .rotate {
+                transform: rotate(-180deg);
             }
         }
+        .dropdown_bot {
+            background-color: #F6F6F673; // Ajout du gris clair
+            padding-top: 10px;
+        }
     }
+
     ul {
         list-style-type: none;
     }

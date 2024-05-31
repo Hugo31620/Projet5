@@ -17,8 +17,14 @@
             padding-left: 10px;
             padding-right: 10px;
             width: 100%;
-            img {
+            .fleche {
+                object-fit: contain;
                 cursor: pointer;
+                transition: transform 0.5s ease;
+            }
+            
+            .rotate {
+                transform: rotate(-180deg);
             }
         }
     }
